@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  labels:
+    app: nginx
+data:
+  01_http.conf: |
+    add_header X-Kubernetes-Pod $hostname;
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Welcome to nginx!</title>
+      </head>
+      <body>
+        <h1>Welcome to nginx!</h1>
+      </body>
+    </html>
